@@ -62,7 +62,7 @@ def select_done():
     name = request.args['clientName']
     phone = request.args['clientPhone']
 
-    selects = read_json('select.json')
+    read_json('select.json')
     selects = ({'goal': goal, 'time': time, 'user_name': name, 'user_phone': phone})
     write_json('select.json', selects)
 
@@ -84,7 +84,7 @@ def booking_done():
     name = request.args['clientName']
     phone = request.args['clientPhone']
 
-    bookings = read_json('booking.json')
+    read_json('booking.json')
     bookings = ({'id': id, 'day': day, 'time': time, 'user_name': name, 'user_phone': phone})
     write_json('booking.json', bookings)
 
@@ -94,13 +94,13 @@ def booking_done():
 
 @app.errorhandler(404)
 def not_found(e):
-   return 'У нас такого нет. Попробуйте вернуться на главную и выбрать что-то другое.'
+    return 'У нас такого нет. Попробуйте вернуться на главную и выбрать что-то другое.'
 
 
 @app.errorhandler(500)
 def server_error(e):
-   return 'Что-то не так, но мы ЭТО уже скоро починим.'
+    return 'Что-то не так, но мы ЭТО уже скоро починим.'
 
 
 if __name__ == '__main__':
-   app.run()
+    app.run()
