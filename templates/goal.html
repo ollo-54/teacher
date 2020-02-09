@@ -3,6 +3,7 @@
 <main class="container mt-3">
    {% set goal = profiles.goals[goal] %}
    <h1 class="h1 text-center w-50 mx-auto mt-1 py-5 mb-4"><strong>Преподаватели <br>  {{ goal }} </strong></h1>
+   <p class="text-right">Всего найдено {{ teacher_for_goal|length }}</br></p>
    {% for items in teacher_for_goal %}
    <div class="row">
       <div class="col-12 col-lg-10 offset-lg-1 m-auto">
